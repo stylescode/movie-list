@@ -1,15 +1,10 @@
 import React from 'react';
 
-const MovieListEntry = ({ movie }) => {
-  console.log({movie});
-
-  return (
-    <li>{movie.title}</li>
-  )
-
-
-
-}
-
+const MovieListEntry = ({ movie, toggleStatus }) => (
+    <div>
+      <span>{movie.title}</span>
+      <button onClick={(e) => toggleStatus(e, movie)}>{movie.status}</button>
+    </div>
+)
 
 export default MovieListEntry;
