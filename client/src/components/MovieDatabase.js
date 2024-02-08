@@ -1,9 +1,5 @@
-const MovieDatabase = [
-  { title: 'Mean Girls' },
-  { title: 'Hackers' },
-  { title: 'The Grey' },
-  { title: 'Sunshine' },
-  { title: 'Ex Machina' },
-];
+import App from '/client/src/components/App.jsx';
+
+const MovieDatabase = [];
 
 export default MovieDatabase;
