@@ -29,7 +29,7 @@ module.exports.movies = {
     })
   },
 
-  modify: (title, year, status, callback) => {
+  modify: (title, status, callback) => {
 
     const putQuery = `UPDATE movies SET status = ${status}
                       WHERE title = ${title};`

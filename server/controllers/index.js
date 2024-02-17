@@ -4,6 +4,7 @@ module.exports.movies = {
   get: (req, res) => {
     models.movies.retrieve((err, result) => {
       if(err) {
+        // may need to add status code
         // argument might need to be wrapped in object
         res.send(err);
       } else {
@@ -17,10 +18,9 @@ module.exports.movies = {
     // break apart movie info req object
     // make sure these values are right
     let movieTitle = req.body.title;
-    let movieYear = req.body.released;
     let movieStatus = req.body.status;
 
-    models.movies.create(movieTitle, movieYear, movieStatus, (err, result) => {
+    models.movies.create(movieTitle, movieStatus, (err, result) => {
       if(err) {
         res.send(err);
       } else {
@@ -33,10 +33,9 @@ module.exports.movies = {
 
   put: (err, res) => {
     let movieTitle = req.body.title;
-    let movieYear = req.body.released;
     let movieStatus = req.body.status;
 
-    models.movies.modify(movieTitle, movieYear, movieStatus, (err, result) => {
+    models.movies.modify(movieTitle, movieStatus, (err, result) => {
       if(err) {
         res.send(err);
       } else {
